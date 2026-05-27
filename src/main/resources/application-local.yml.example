@@ -1,0 +1,7 @@
+# Скопируйте в application-local.yml и укажите свои данные (файл в .gitignore).
+# Запуск: -Dspring.profiles.active=local  или переменная SPRING_PROFILES_ACTIVE=local
+
+spring:
+  datasource:
+    username: Aboba
+    password: 4466

@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: quest-party
+  datasource:
+    url: jdbc:mysql://${DB_HOST:127.0.0.1}:${DB_PORT:3306}/${DB_NAME:questparty}?createDatabaseIfNotExist=true&serverTimezone=UTC&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: ${DB_USER:Aboba}
+    password: ${DB_PASSWORD:4466}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /api
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:questparty-super-secret-key-change-in-production-min-256-bits}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000}
+  gamification:
+    xp-per-level-base: 100
+    level-multiplier: 1.5
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.questparty: INFO
+    org.springframework.security: WARN

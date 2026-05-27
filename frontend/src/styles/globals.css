@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Segoe UI', system-ui, sans-serif;
+  --color-background: #0a0b12;
+  --color-foreground: #e8eaf6;
+  --color-card: rgb(18 20 32 / 0.72);
+  --color-card-border: rgb(148 163 255 / 0.14);
+  --color-primary: #8b5cf6;
+  --color-primary-foreground: #f5f3ff;
+  --color-accent: #f59e0b;
+  --color-accent-foreground: #1a1200;
+  --color-muted: #6b7280;
+  --color-muted-foreground: #9ca3af;
+  --color-destructive: #ef4444;
+  --color-success: #22c55e;
+  --radius-lg: 0.75rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgb(139 92 246 / 0.25), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgb(245 158 11 / 0.08), transparent),
+    var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #c4b5fd, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.golden-avatar-frame {
+  background: conic-gradient(from 180deg, #f59e0b, #fde68a, #fbbf24, #fff7ed, #f59e0b);
+  box-shadow: 0 0 0 1px rgb(251 191 36 / 0.35), 0 0 24px rgb(245 158 11 / 0.45);
+}
